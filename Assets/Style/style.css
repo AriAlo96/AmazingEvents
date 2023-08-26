@@ -1,0 +1,142 @@
+*{  margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.img-banner {
+    height: 20rem;
+    object-fit: cover;
+}
+.logo {
+    width: 10rem;
+}
+header {
+    background-color: rgb(236, 206, 212);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    border-bottom: solid 0.3rem rgb(221, 16, 95);
+}
+.a-header {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(221, 16, 95);
+    padding: 0.7rem;
+    border-radius: 2rem;
+    margin: 0.7rem;
+}
+
+.a-header:hover {
+    background-color: rgb(236, 206, 212);
+    border: 0.09rem rgb(221, 16, 95);
+    color: rgb(221, 16, 95);
+    transform: scale(95%);
+}
+.nav-header {
+    display: flex;
+    flex-wrap: wrap;
+}
+.check-me {
+    border: solid rgb(221, 16, 95) !important
+}
+.div-checkbox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cont-checkbox-search {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    
+}
+.h2-carrusel {
+   font-size: 4rem;
+   color: black;
+   -webkit-text-stroke: 0.2rem rgb(221, 16, 95);
+   font-weight: bolder;
+   position: relative;
+   bottom: 12rem;
+   text-align: center;
+   height: 0.1rem;
+}
+.but-me {
+    color: rgb(221, 16, 95) !important;
+    border: solid 0.1rem rgb(221, 16, 95) !important;
+}
+.but-me:hover {
+    background-color: rgb(221, 16, 95) !important;
+    color: white !important;
+}
+.div-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+}
+.card-bot {
+    background-color: rgb(221, 16, 95) !important;
+    border-color: rgb(221, 16, 95) !important;
+}
+.card-bot:hover {
+    transform: scale(110%);
+}
+.cont-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem;
+}
+.card-me {
+    margin: 1rem !important;
+}
+.card-me:hover {
+    transform: scale(110%);
+}
+.img-footer {
+    width: 2rem;
+    border-radius: 0.5rem;
+}
+.img-footer:hover {
+    transform: scale(80%);
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: rgb(236, 206, 212);
+    border-top: solid 0.3rem rgb(221, 16, 95);
+}
+.p-footer {
+    margin-bottom: 0rem;
+}
+.p-footer:hover {
+    text-decoration-line: underline;
+}
+
+@media only screen and (max-width: 720px) {
+header {
+    flex-direction: column;
+}
+.a-header {
+    margin: 0.1rem;
+    padding: 0.3rem;
+}
+.h2-carrusel {
+    font-size: 3rem;
+    -webkit-text-stroke: 0.1rem rgb(221, 16, 95);
+}
+.logo {
+    width: 8rem;
+}
+.div-checkbox {
+    justify-content: left;
+}
+.cont-checkbox-search {
+    flex-direction: column-reverse;
+    align-items: center;
+}
+}
