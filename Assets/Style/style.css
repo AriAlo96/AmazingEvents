@@ -186,24 +186,33 @@ table {
     flex-direction: column;
     padding: 2rem;
 }
+@media only screen and (max-width: 430px) {
+.nav-header {
+    display: flex;
+    flex-direction: column;
+    }
+}
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 780px) {
 header {
     flex-direction: column;
+    justify-content: space-between;
 }
 .a-header {
     margin: 0.1rem;
     padding: 0.3rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.nav-header {
+    justify-content: center;
 }
 .h2-carrusel {
     font-size: 3rem;
     -webkit-text-stroke: 0.1rem rgb(221, 16, 95);
 }
-.logo {
-    width: 8rem;
-}
 .div-checkbox {
-    justify-content: left;
+    flex-direction: column;
 }
 .cont-checkbox-search {
     flex-direction: column-reverse;
@@ -216,5 +225,16 @@ header {
 .div-card-details {
     flex-wrap: wrap;
     text-align: center;
+}
+.imag {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+}
+.img-footer {
+    padding: 0.2rem;
+}
+.label-contact , .input-contact , textarea {
+    width: 80%;
 }
 }
