@@ -186,6 +186,9 @@ table {
     flex-direction: column;
     padding: 2rem;
 }
+.card-cover {
+    object-fit: cover;
+}
 @media only screen and (max-width: 430px) {
 .nav-header {
     display: flex;
