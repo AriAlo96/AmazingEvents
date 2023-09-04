@@ -33,3 +33,4 @@ function imprimirCards(a, b) {
 
 let cards = crearListaCards(listaEventos)
 imprimirCards("contenedorCardsUpcomingEvents", cards)
+
