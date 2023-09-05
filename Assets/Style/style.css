@@ -78,7 +78,6 @@ header {
 .div-card {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem;
     flex-wrap: wrap;
 }
 .card-bot {
@@ -96,9 +95,19 @@ header {
 }
 .card-me {
     margin: 1rem !important;
+padding-bottom: 1rem !important;
 }
 .card-me:hover {
     transform: scale(1.10);
+}
+.card-body-me {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+}
+.card-text-me {
+    min-height: 5rem;
 }
 .img-footer {
     width: 2rem;
