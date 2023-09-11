@@ -14,6 +14,10 @@ main {
     width: 10rem;
 }
 header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: rgb(236, 206, 212);
     display: flex;
     justify-content: space-between;
@@ -41,11 +45,12 @@ header {
     flex-wrap: wrap;
 }
 .check-me {
-    border: solid rgb(221, 16, 95) !important
+    border: solid rgb(221, 16, 95) !important;
+    cursor: pointer;
 }
-.div-checkbox {
-    display: flex;
-    flex-wrap: wrap;
+
+input[type=checkbox]:checked {
+    background-color: rgb(221, 16, 95);
 }
 .cont-checkbox-search {
     display: flex;
@@ -56,10 +61,12 @@ header {
 .form-main {
     flex-direction: row !important;
 }
-.but-me {
-    color: rgb(221, 16, 95) !important;
-    border: solid 0.1rem rgb(221, 16, 95) !important;
+
+.form-search {
+    border: solid 2px rgb(221, 16, 95) !important;
+
 }
+
 .but-me:hover {
     background-color: rgb(221, 16, 95) !important;
     color: white !important;
@@ -130,12 +137,13 @@ footer {
 .p-footer:hover {
     text-decoration-line: underline;
 }
-form {
+.form-contact {
     display: flex;
     flex-direction: column;
     align-items:center;
     margin: 1rem;
 }
+
 .label-contact , .input-contact , textarea {
     width: 40%;
 }
@@ -182,6 +190,7 @@ table {
     border: solid 0.1rem rgb(221, 16, 95);
     background-color: rgba(214, 204, 207, 0.452);
     border-radius: 3rem;
+    margin: 4rem;
 }
 .card-img-me {
     width: 20rem;
@@ -198,15 +207,16 @@ table {
 .card-cover {
     object-fit: cover;
 }
-@media only screen and (max-width: 430px) {
-.nav-header {
-    display: flex;
-    flex-direction: column;
+@media only screen and (max-width: 370px){
+    .form-checkbox {
+        display: flex;
+        flex-direction: column;
     }
 }
 
 @media only screen and (max-width: 780px) {
 header {
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -223,9 +233,7 @@ header {
     font-size: 3rem;
     -webkit-text-stroke: 0.1rem rgb(221, 16, 95);
 }
-.div-checkbox {
-    flex-direction: column;
-}
+
 .cont-checkbox-search {
     flex-direction: column-reverse;
     align-items: center;
@@ -250,3 +258,10 @@ header {
     width: 80%;
 }
 }
+
+@media only screen and (max-width: 430px) {
+    .nav-header {
+        display: flex;
+        flex-direction: column;
+        }
+    }
