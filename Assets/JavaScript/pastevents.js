@@ -34,6 +34,9 @@ let pastEventsTemplate = createListPastEvents(pastEventsFilter)
 function print(container, element) {
     let placeCard = document.getElementById(container)
     placeCard.innerHTML = (element)
+    if (element.length === 0) {
+        return print("containerCardsPastEvents", `No results. Write another name`);
+    }
 }
 
 print("containerCardsPastEvents", pastEventsTemplate)
@@ -98,9 +101,6 @@ containerSearch.addEventListener("keyup", () => {
 //Filtro Search
 function filterSearch(array, input) {
 let objectArrayFilter = array.filter(object => object.name.toLowerCase().includes(input.value.toLowerCase()));
-if (objectArrayFilter.length === 0) {
-    return print("containerCardsPastEvents", `No results. Write another name`);
-}
     return objectArrayFilter
 }
 

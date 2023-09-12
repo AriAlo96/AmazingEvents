@@ -27,6 +27,9 @@ let cards = createCardsList(eventList)
 function print(container, element) {
     let placeCard = document.getElementById(container)
     placeCard.innerHTML = (element)
+    if (element.length === 0) {
+        return print("containerCards", `No results. Write another name`);
+    }
 }
 
 print("containerCards", cards)
@@ -62,48 +65,44 @@ print("form-search-index", formSearch)
 
 //Escuchador Checkboxs
 let containerCheckbox = document.getElementById("form-check-index")
-containerCheckbox.addEventListener ("change",() => {
-let returnCrossFilters = crossFilter (eventList,containerSearch)
-print ("containerCards",returnCrossFilters)
+containerCheckbox.addEventListener("change", () => {
+    let returnCrossFilters = crossFilter(eventList, containerSearch)
+    print("containerCards", returnCrossFilters)
 }
 )
 
 
 //Filtro Checkbox
- function filterCheckbox (array) {
- let nodeListCheckbox = document.querySelectorAll(`input[type=checkbox]:checked`)
- let arrayCheckbox = Array.from(nodeListCheckbox).map( input => (input.value)) 
- if (arrayCheckbox.length === 0) {
-    return array;
-  }   
- let objectFilterCheckbox = array.filter (object => arrayCheckbox.includes(object.category))
-    
- return objectFilterCheckbox
- }
-  
+function filterCheckbox(array) {
+    let nodeListCheckbox = document.querySelectorAll(`input[type=checkbox]:checked`)
+    let arrayCheckbox = Array.from(nodeListCheckbox).map(input => (input.value))
+    if (arrayCheckbox.length === 0) {
+        return array;
+    }
+    let objectFilterCheckbox = array.filter(object => arrayCheckbox.includes(object.category))
+
+    return objectFilterCheckbox
+}
+
 
 //Escuchador Search
 let containerSearch = document.getElementById("search")
-containerSearch.addEventListener ("keyup",() => {
-let returnCrossFilters = crossFilter (eventList,containerSearch)
-print ("containerCards",returnCrossFilters)
+containerSearch.addEventListener("keyup", () => {
+    let returnCrossFilters = crossFilter(eventList, containerSearch)
+    print("containerCards", returnCrossFilters)
 }
 )
 
 //Filtro Search
-function filterSearch (array, input) { 
-
-let objectArrayFilter = array.filter(object => object.name.toLowerCase().includes(input.value.toLowerCase()));  
-if (objectArrayFilter.length === 0) {
-    return print ("containerCards",`No results. Write another name`);
-  } 
-return objectArrayFilter
+function filterSearch(array, input) {
+    let objectArrayFilter = array.filter(object => object.name.toLowerCase().includes(input.value.toLowerCase()));
+    return objectArrayFilter
 }
-  
- 
- //Filtro Cruzado
- function crossFilter (array, input){
- let arrayFilterCheckbox =  filterCheckbox (array)
- let arrayFilterSearch = filterSearch (arrayFilterCheckbox,input)
-   return createCardsList (arrayFilterSearch)
- }
+
+
+//Filtro Cruzado
+function crossFilter(array, input) {
+    let arrayFilterCheckbox = filterCheckbox(array)
+    let arrayFilterSearch = filterSearch(arrayFilterCheckbox, input)
+    return createCardsList(arrayFilterSearch)
+}
