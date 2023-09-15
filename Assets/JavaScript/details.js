@@ -1,46 +1,21 @@
-let parametro = location.search;
+let URL_API = "https://mindhub-xj03.onrender.com/api/amazing"
 
+import { createCardDetails } from "../modules/functions.js"
+
+let parametro = location.search
 let params = new URLSearchParams(parametro)
-
-let idEvent = params.get("parametro");
-
-let events = data.events.find($event => $event._id === idEvent);
-
-let containerCardDetails = document.getElementById("containerCardDetails");
+let idEvent = params.get("parametro")
 
 
-function createCardDetails(e) {
-    if (e.assistance == null){
-    containerCardDetails.innerHTML += `
-    <img src="${e.image}" class="card-img-me">
-        <div class="items-card-details">
-                <h3 class="card-title">${e.name}</h3>
-                <h5 class="card-text">${e.description}</h5>
-                <h6>Category: ${e.category}</h6>
-                <p>Date: ${e.date}</p>
-                <p>Place: ${e.place}</p>
-                <p>Capacity: ${e.capacity}</p>
-                <p>Estimate: ${e.estimate} <p>
-                <h4>US$ ${e.price}</h4>
-        </div>
-    `  
-} 
+fetch(URL_API)
+    .then(response => response.json())
+    .then(object => {
+        let eventsList = object.events
+        let eventsFilterID = eventsList.find(object => object._id == idEvent);
+        createCardDetails(eventsFilterID)
+    })
+    .catch(err => console.log(err))
 
-if (e.estimate == null){
-    containerCardDetails.innerHTML += `
-    <img src="${e.image}" class="card-img-me">
-        <div class="items-card-details">
-                <h3 class="card-title">${e.name}</h3>
-                <h5 class="card-text">${e.description}</h5>
-                <h6>Category: ${e.category}</h6>
-                <p>Date: ${e.date}</p>
-                <p>Place: ${e.place}</p>
-                <p>Capacity: ${e.capacity}</p>
-                <p>Assistance: ${e.assistance}</p>
-                <h4>US$ ${e.price}</h4>
-        </div>
-    `  
-} 
-}
+    
 
-createCardDetails(events)
+

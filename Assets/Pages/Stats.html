@@ -58,57 +58,64 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <table>
-            <tr>
-                <th class="th" colspan="3">Event Statistics</th>
-            </tr>
-            <tr>
-                <td class="td">Events with highest % of assistance</td>
-                <td class="td">Events with lowest % of assistance</td>
-                <td class="td">Events with larger capacity</td>
-            </tr>
-            <tr>
-                <td class="td"></td>
-                <td class="td"></td>
-                <td class="td"></td>
-            </tr>
-            <tr>
-                <th class="th" colspan="3">Upcoming events statistics by category</th>
-            </tr>
-            <tr>
-                <td class="td">Categories</td>
-                <td class="td">Revenues</td>
-                <td class="td">Percentage of assistance</td>
-            </tr>
-            <tr>
-                <td class="td"></td>
-                <td class="td"></td>
-                <td class="td"></td>
-            </tr>
-            <tr>
-                <td class="td"></td>
-                <td class="td"></td>
-                <td class="td"></td>
-            </tr>
-            <tr>
-                <th class="th" colspan="3">Past events statistics by category</th>
-            </tr>
-            <tr>
-                <td class="td">Categories</td>
-                <td class="td">Revenues</td>
-                <td class="td">Percentage of assistance</td>
-            </tr>
-            <tr>
-                <td class="td"></td>
-                <td class="td"></td>
-                <td class="td"></td>
-            </tr>
-            <tr>
-                <td class="td"></td>
-                <td class="td"></td>
-                <td class="td"></td>
-            </tr>
-        </table>
+        <div class="container-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="th" colspan="3">Event Statistics</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="subtitle">
+                        <td class="td">Events with highest % of assistance</td>
+                        <td class="td">Events with lowest % of assistance</td>
+                        <td class="td">Events with larger capacity</td>
+                    </tr>
+                    <tr id="body-table-1">
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th class="th" colspan="3">Upcoming events statistics by category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="subtitle">
+                        <td class="td">Categories</td>
+                        <td class="td">Revenues</td>
+                        <td class="td">Percentage of assistance</td>
+                    </tr>
+                </tbody>
+                <tbody id="body-table-2">
+                    <tr>
+
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="th" colspan="3">Past events statistics by category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="subtitle">
+                        <td class="td">Categories</td>
+                        <td class="td">Revenues</td>
+                        <td class="td">Percentage of assistance</td>
+                    </tr>
+                </tbody>
+                <tbody id="body-table-3">
+                    <tr>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
     <footer>
         <div class="imag">
@@ -137,6 +144,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+    <script type="module" src="../javaScript/stats.js"></script>
 </body>
 
 </html>
