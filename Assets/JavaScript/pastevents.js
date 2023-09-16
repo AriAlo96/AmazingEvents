@@ -25,7 +25,6 @@ fetch(URL_API)
         print("form-search-pastevents", formSearch)
         let containerSearch = document.getElementById("search")
         let listCards = createCardsList(pastEvents)
-        console.log(pastEvents);
         print("containerCardsPastEvents", listCards)
         let containerCheckbox = document.getElementById("form-check-pastevents")
         containerCheckbox.addEventListener("change", () => {

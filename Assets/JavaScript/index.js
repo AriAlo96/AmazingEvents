@@ -5,7 +5,6 @@ import { print } from "../modules/functions.js"
 import { createCheckbox } from "../modules/functions.js"
 import { createListCheckbox } from "../modules/functions.js"
 import { createSearch } from "../modules/functions.js"
-import { filterCheckbox } from "../modules/functions.js"
 import { crossFilter } from "../modules/functions.js"
 
 
@@ -13,7 +12,6 @@ import { crossFilter } from "../modules/functions.js"
 fetch(URL_API)
     .then(response => response.json())
     .then((object) => {
-       
         let eventsList = object.events
         createCheckbox(eventsList.category)
         let listCategories = Array.from(new Set(eventsList.map(eventList => eventList.category)))
@@ -29,7 +27,6 @@ fetch(URL_API)
             let returnCrossFilters = crossFilter(eventsList, containerSearch)
             print("containerCards", returnCrossFilters)
         })
-
         containerSearch.addEventListener("keyup", () => {
             let returnCrossFilters = crossFilter(eventsList, containerSearch)
             print("containerCards", returnCrossFilters)

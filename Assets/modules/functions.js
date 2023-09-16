@@ -219,21 +219,21 @@ export function revenueCategory(events) {
 
 // Función para obtener el promedio del porcentaje de asistencia por categoría
 export function percentageAssistanceByCategory(events) {
-    let additionPercentajes = {};
+    let additionPercentages = {};
     let additionEvents = {};
     for (let event of events) {
         let category = event.category;
         let percentageAssistance = ((event.estimate || event.assistance) * 100 / event.capacity);
-        if (!additionPercentajes[category]) {
-            additionPercentajes[category] = 0;
+        if (!additionPercentages[category]) {
+            additionPercentages[category] = 0;
             additionEvents[category] = 0;
         }
-        additionPercentajes[category] += percentageAssistance;
+        additionPercentages[category] += percentageAssistance;
         additionEvents[category] += 1;
     }
     let categoryAverages = {};
-    for (let category in additionPercentajes) {
-        let addition = additionPercentajes[category];
+    for (let category in additionPercentages) {
+        let addition = additionPercentages[category];
         let events = additionEvents[category];
         let average = (addition / events).toFixed(1);
         categoryAverages[category] = average;
